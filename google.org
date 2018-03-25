@@ -1,26 +1,27 @@
-#+TITLE: Deep learning
 #+AUTHOR: svtter
 #+OPTION: toc:2
 
-* 从机器学习到深度学习
-** softmax
-   softmax可以把数值转换为对应在0-1之间的概率。
+* Deep learning
+
+** 从机器学习到深度学习
+*** softmax
+    softmax可以把数值转换为对应在0-1之间的概率。
    
-   $S({y_i}) = \frac{e^{y_i}}{\sum_{j}e^{y_{j}}}$
+    $S({y_i}) = \frac{e^{y_i}}{\sum_{j}e^{y_{j}}}$
    
-   #+BEGIN_SRC python
+    #+BEGIN_SRC python
    
-   def softmax(x):
-       return np.exp(x) / np.sum(np.exp(x), axis=0)
+    def softmax(x):
+        return np.exp(x) / np.sum(np.exp(x), axis=0)
 
-   #+END_SRC
+    #+END_SRC
 
-** cross-entropy 交叉熵
+*** cross-entropy 交叉熵
 
-   $(D(S, L) = -\sum_{j} L_{i} log(S_{i})$
+    $(D(S, L) = -\sum_{j} L_{i} log(S_{i})$
 
-** 正则化的作用
+*** 正则化的作用
 
-   正则化可以使训练速度提升，优化梯度下降的效果。
+    正则化可以使训练速度提升，优化梯度下降的效果。
    
-   正则化可以参考一些函数直接进行。
+    正则化可以参考一些函数直接进行。
