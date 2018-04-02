@@ -12,35 +12,34 @@ Tensorflow 学习笔记
    :caption: Contents:
 
     google
+    doc/readme
+    lstm/readme
+    keras/readme
 
 
+颤抖吧，人类。
 
 PROBLEMS
 ----------
 
-颤抖吧，人类。
-
 Tensor Tensor() is not an element of this graph.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------
 
-I had this problem when doing inference in a different thread than where I loaded my model. Here's how I fixed the problem:
+.. code:: markdown
 
+    I had this problem when doing inference in a different thread than where I loaded my model. Here's how I fixed the problem:
+    
     Right after loading or constructing your model, save the TensorFlow graph:
-
-.. code:: python
-
+    
       graph = tf.get_default_graph()
-
-In the other thread (or perhaps in an asynchronous event handler), do:
-
-.. code:: python
-
+    
+    In the other thread (or perhaps in an asynchronous event handler), do:
+    
       global graph
       with graph.as_default():
           (... do inference here ...)
-
-I learned about this from https://www.tensorflow.org/versions/r0.11/api_docs/python/framework.html#get_default_graph
-
+    
+    I learned about this from https://www.tensorflow.org/versions/r0.11/api_docs/python/framework.html#get_default_graph
 
 Indices and tables
 ==================
