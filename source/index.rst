@@ -17,11 +17,11 @@ Tensorflow 学习笔记
     lstm/readme
 
 
-颤抖吧，人类。
-
 
 PROBLEMS
 ----------
+
+颤抖吧，人类。
 
 Tensor Tensor() is not an element of this graph.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
