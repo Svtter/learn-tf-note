@@ -19,11 +19,12 @@ Tensorflow 学习笔记
 
 颤抖吧，人类。
 
+
 PROBLEMS
 ----------
 
 Tensor Tensor() is not an element of this graph.
----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: markdown
 
@@ -40,6 +41,7 @@ Tensor Tensor() is not an element of this graph.
           (... do inference here ...)
     
     I learned about this from https://www.tensorflow.org/versions/r0.11/api_docs/python/framework.html#get_default_graph
+
 
 Indices and tables
 ==================
