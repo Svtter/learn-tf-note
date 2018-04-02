@@ -12,9 +12,6 @@ Tensorflow 学习笔记
    :caption: Contents:
 
     google
-    doc/readme
-    lstm/readme
-    keras/readme
 
 
 颤抖吧，人类。
