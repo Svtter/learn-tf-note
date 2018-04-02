@@ -11,7 +11,10 @@ Tensorflow 学习笔记
    :maxdepth: 2
    :caption: Contents:
 
-    google
+   google
+   doc/readme
+   keras/readme
+   lstm/readme
 
 
 

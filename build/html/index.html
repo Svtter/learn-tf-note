@@ -17,6 +17,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Google Deep learning" href="google.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -34,6 +35,22 @@
   <div class="section" id="tensorflow">
 <h1>Tensorflow 学习笔记<a class="headerlink" href="#tensorflow" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="google.html">Google Deep learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="google.html#id1">从机器学习到深度学习</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/readme.html">文档中的关键点</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/readme.html#id2">手动指定设备来运行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/readme.html#gpu">允许 GPU 内存上涨</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lstm/readme.html">LSTM 理解</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lstm/readme.html#github-tutorial-learn">github tutorial learn</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="problems">
 <h2>PROBLEMS<a class="headerlink" href="#problems" title="永久链接至标题">¶</a></h2>
@@ -43,18 +60,16 @@
 <p>I had this problem when doing inference in a different thread than where I loaded my model. Here’s how I fixed the problem:</p>
 <blockquote>
 <div>Right after loading or constructing your model, save the TensorFlow graph:</div></blockquote>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">graph</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_default_graph</span><span class="p">()</span>
-
-<span class="n">In</span> <span class="n">the</span> <span class="n">other</span> <span class="n">thread</span> <span class="p">(</span><span class="ow">or</span> <span class="n">perhaps</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">asynchronous</span> <span class="n">event</span> <span class="n">handler</span><span class="p">),</span> <span class="n">do</span><span class="p">:</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">get_default_graph</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">global</span> <span class="n">graph</span>
-  <span class="k">with</span> <span class="n">graph</span><span class="o">.</span><span class="n">as_default</span><span class="p">():</span>
-      <span class="p">(</span><span class="o">...</span> <span class="n">do</span> <span class="n">inference</span> <span class="n">here</span> <span class="o">...</span><span class="p">)</span>
-
-<span class="n">I</span> <span class="n">learned</span> <span class="n">about</span> <span class="n">this</span> <span class="kn">from</span> <span class="nn">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">tensorflow</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="n">r0</span><span class="o">.</span><span class="mi">11</span><span class="o">/</span><span class="n">api_docs</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">framework</span><span class="o">.</span><span class="n">html</span><span class="c1">#get_default_graph</span>
+<p>In the other thread (or perhaps in an asynchronous event handler), do:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">graph</span>
+<span class="k">with</span> <span class="n">graph</span><span class="o">.</span><span class="n">as_default</span><span class="p">():</span>
+    <span class="p">(</span><span class="o">...</span> <span class="n">do</span> <span class="n">inference</span> <span class="n">here</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>I learned about this from <a class="reference external" href="https://www.tensorflow.org/versions/r0.11/api_docs/python/framework.html#get_default_graph">https://www.tensorflow.org/versions/r0.11/api_docs/python/framework.html#get_default_graph</a></p>
 </div>
 </div>
 </div>
@@ -88,6 +103,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="google.html" title="下一章">Google Deep learning</a></li>
   </ul></li>
 </ul>
 </div>
