@@ -33,3 +33,9 @@ cross-entropy 交叉熵
 正则化可以使训练速度提升，优化梯度下降的效果。
 
 正则化可以参考一些函数直接进行。
+
+
+使用IPython.display输出图像
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://stackoverflow.com/questions/11854847/how-can-i-display-an-image-from-a-file-in-jupyter-notebook
